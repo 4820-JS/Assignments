@@ -1,13 +1,21 @@
 console.log("test")
 
+//======================================================================================================
+
 // 1. In your own words, describe what an if/else or switch statement does. Why is it useful?
 //Answer: if/else or switch statement are useful for scenarios based on conditions or evaluations. It helps you to control the flow of the program according on conditions or evaluations that you have aready programed. The program will make a decition true or false and will continue with the next line of code.
+
+//======================================================================================================
 
 // 2. In your own words, describe what an array is. I don’t want a technical definition, but instead how it relates to real life.
 //Answer: An array is like a variable that can store different values, for example the grades of a group of students : let grades = [3, 5, 6, 9, 2, 10, 4.....];
 
+//======================================================================================================
+
 // 3. What is meant by saying JavaScript is a “Zero counting language”? Why is this important when we use arrays?
 //Answer: It means that the first element of an arrays will be the index 0 and the second element will be the index 1 like this: Position [1, 2, 3, 4...] Index [0, 1, 2, 3...]
+
+//======================================================================================================
 
 // 4. Make two variables, one that contains a singular noun and one that contains a number. Using logic gating (if/else or switch statement), print to the console either the plural or singular of that noun. Create 4 pairs of variables to make sure it works. For example:
 //Answer:
@@ -65,6 +73,8 @@ if (number4 === 1) {
 
 //console has the output: "1 child"
 
+//======================================================================================================
+
 // 5. In your own words, describe two advantages and two disadvantages to using a Ternary operator.
 //Answer:
 
@@ -75,6 +85,8 @@ if (number4 === 1) {
 // It is limited because allows you to have just one action for the output.
 // In a complex condition will be hard to read and understand the code.
 
+//======================================================================================================
+
 // 6. Create an array that contains two numbers. Use a Ternary operator to print to the console the highest number.
 //Answer:
 
@@ -82,6 +94,7 @@ let towNumbers = [45, 24];
 let highestNumber = (towNumbers[0] < towNumbers[1]) ? towNumbers[1] : towNumbers[0];
 console.log("The highest number is => " + highestNumber + ".");
 
+//======================================================================================================
 
 // 7. Create a variable that contains a number from 0-100. Create a switch statement without fall throughs, that assigns a letter grade (A, B, C, D, F) to that percentage. Print out the letter grade to the console. It is NOT necessary to do + or - grades (A+ or A- for example), and you can choose the range for the grade.
 //Answer:
@@ -110,6 +123,8 @@ if (0 <= grade && grade <= 100){
 }else{
     console.log("grade is out of range")
 }
+
+//======================================================================================================
 
 // 8. A boardgame company has a kickstarter campaign for their new game Throw Throw Burrito. The more money a customer spends on the campaign, the more items they receive:
 
@@ -158,6 +173,8 @@ switch(true){
         console.log("-> Nothing");
         // break;    
 }
+
+//======================================================================================================
 
 // 9. Declare an array that contains at least 6 strings. Look up how to generate a random number in JavaScript. Create a variable that contains a random number from 0 to the length of your array minus 1. Use that random number variable to print a random string from your array to the console.
 //Answer:
