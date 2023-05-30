@@ -7,25 +7,32 @@ console.log(`test`)
 // ".pop" removes the last element form array
 // ".concat" creates a new array
 
+//====================================================================================
+
 //2. In your own words, describe the benefits of a for loop over a while loop.
 //Answer: You can make a for loop in a single line of code, making it easier to read, with for loop you can control the exit with the 'break' statement.
+
+//====================================================================================
 
 //3. Let’s say that I have an array named fruitArr, with an unknown number of elements.
 // If I run: fruitArr[5]
 // And I get the output: undefined
 // What does that tell me about the array?
-//Answer: It means that the array has less than 5 elements
+//Answer: It means that the array has less than 5 elements or the element at the index position 5 has been defined with and empty or undefined value.
+
+//====================================================================================
 
 //4. In your own words, describe the difference between a while and a do…while loop.
 //Answer:
 //In a while, the condition is evaluated before each iteration. If the condition is initially false, the body is not executed at all.
 //In a do...while, body is executed first, and then the condition is evaluated. This guarantees that at least once itaration is executed, even if the condition is false.
 
+//====================================================================================
+
 //5. Declare an array with 5 different numbers inside it. Use a while loop to find the largest number in the array and print it to the console. HINT: you will need to compare one number to another.
 //Answer:
 
 let array5 = [45, 36, 82, 46, 56]
-//let array5 = [-45, -36, -82, -46, -56]
 let largestNumber = 0
 let i = 0
 
@@ -36,6 +43,8 @@ while (i< array5.length){
     i++
 }
 console.log("The largest # is: " + largestNumber)
+
+//====================================================================================
 
 //6. Declare a variable with a string as a value, that is a word of at least 10 characters. Using a do…while loop, change every second letter to uppercase.
 // Example: javascript —-> jAvAsCrIpT
@@ -55,6 +64,8 @@ do{
 }while (j<string1.length)
 console.log(string2)
 
+//====================================================================================
+
 //7. Declare a variable with a positive integer. Using a for loop, write a program that finds the sum of 1 to the number in your variable. I only expect the total sum to the console as the output. 
 // Example:
 // let num = 5
@@ -68,6 +79,8 @@ for (let x = 1; x <= num; x++){
     sum += x
 }
 console.log(sum)
+
+//====================================================================================
 
 //8. Declare an array with at least 8 numbers in it. Delete all the numbers that are divisible by 3. Print the resulting array to the console.
 //Answer
@@ -83,6 +96,8 @@ do{
     y++
 }while (y<array8.length)
 console.log(newarray8)
+
+//====================================================================================
 
 //9. Declare a variable that contains a string of a sentence. Using a for…of loop, count the number of vowels (a, e, i, o, u) that are in the sentence and print it to the console. HINT: strings ARE arrays.
 //Answer:
