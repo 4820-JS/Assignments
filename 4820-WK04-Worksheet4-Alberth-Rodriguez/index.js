@@ -136,6 +136,22 @@ planetAge(40,"Jupiter")
 //Output array: [1, 345, 89, 23, 90]
 //Answer
 
+let names = [1, 345, 89, "Hello", "Howdy", 23, 90, "Hi There"]
+
+function numberFilter (names){
+    let names2 = []
+    let i = 0
+    while (i < names.length){
+        if (Math.sign(names[i]) === 1){
+            names2.push(names[i])
+            i++
+        }else{
+            i++
+        }
+    }console.log("[",names2.join(", "),"]")
+}
+numberFilter(names)
+
 //===========================================================================================================
 
 //8. Declare a function called stringSort and an array with at least 6 strings of varied length. stringSort returns an array of strings sorted by length in ascending order.
