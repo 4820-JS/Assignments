@@ -33,6 +33,40 @@ console.log(`test`)
 // Quarter: 25, Dime: 2, Nickel: 0, Penny: 1
 //Answer
 
+//Whithout Array
+function coinConvert(num){
+    let quarter = 25
+    let dime = 10
+    let nickel = 5
+    let penny = 1
+
+    let quarterCoins = 0
+    let dimeCoins = 0
+    let nickelCoins = 0
+    let pennyCoins = 0
+    
+    if (num < 1 || num > 100){   
+        console.log(`Icorrect, the number should be between 1 and 100`)
+    }else if (1 < num < 100){
+        if (num >= 25){
+        quarterCoins = num / quarter
+        num = num % quarter
+    }if (num >= 10){
+        dimeCoins = num / dime
+        num = num % dime
+    }if  (num >= 5){
+        nickelCoins = num / nickel
+        num = num % nickel
+    }if  (num >= 1){
+        pennyCoins = num / penny
+        num = num % penny
+    }
+    console.log(" Quarter: ",Math.floor(quarterCoins),", Dime: ",Math.floor(dimeCoins),", Nickel: ",Math.floor(nickelCoins),", Penny: ",Math.floor(pennyCoins) )
+}
+}
+coinConvert(49)
+
+
 //===========================================================================================================
 
 //6. Declare a function called planetAge, that has ‘age’ and ‘planet’ as parameters. Code a function that prints to the console the age on a different planet, based on the orbit.
