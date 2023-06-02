@@ -196,6 +196,27 @@ stringSort(array)
 //Returned string: "CHLN Club"
 //Answer
 
+let clubNames = ["Harry", "Newt", "Luna", "Cho"]
+
+//With .sort and .charAt method
+function groupName (clubNames){
+    let name = []
+    // let names = ""
+    for(let j = 0 ; j < clubNames.length ; j++){
+        name.push(clubNames[j].charAt(0))
+        // names += clubNames[j].charAt(0)
+    }
+    let name2 = (name.sort())
+    let names = ""
+    for(let i = 0 ; i < name2.length ; i++){
+        // name.push(clubNames[i].charAt(0))
+        names += name2[i].charAt(0)
+    }
+    console.log(names,"Club")
+}
+
+groupName(clubNames)
+
 //===========================================================================================================
 
 //10. Declare a function named symNum that has a parameter called num, and returns true or false depending on whether the number is symmetrical or not. A number is symmetrical when it is the same as its reverse.
