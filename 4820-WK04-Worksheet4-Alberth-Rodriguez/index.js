@@ -160,6 +160,13 @@ numberFilter(names)
 //Output array: ["Hi", "Hello", "Hi there", "Greetings", "Welcome back", "How's it going"]
 //Answer
 
+let array = ["How's it going", "Hello", "Greetings", "Hi there", "Hi", "Welcome back"]
+
+//With .sort method
+function string_Sort (array){
+    return array.sort((a,b) => a.length - b.length)
+}
+
 //===========================================================================================================
 
 //9. A group of students have decided to start a club at Langara. The name of the club will be the first letter of each of their names, sorted in alphabetical order. Declare a function called groupName that has an array as a parameter, and returns the name of the club.
