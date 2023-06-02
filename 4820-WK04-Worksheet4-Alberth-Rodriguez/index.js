@@ -112,6 +112,22 @@ coin_Convert(48)
 //Your age on Jupiter is 3.37 years old
 //Answer
 
+function planetAge (age, planet){
+    let orbitalPeriod = [0.24,0.61,1,1.88,11.86,29.44,84.01,164.79]
+    let planets = ["mercury","venus","earth","mars","jupiter","saturn","uranus","neptune"]
+    if (planets.includes(planet.toLowerCase()) === true && Math.sign(age) === 1){    
+        let index = planets.indexOf(planet.toLowerCase()) 
+        let newAge = age/orbitalPeriod[index]
+        console.log("Your age on",planet,"is", newAge.toFixed(2), "years old")
+    }else if(planets.includes(planet.toLowerCase()) === false){
+        console.log("Please enter a correct planet")
+    }else if(Math.sign(age) != 1){
+        console.log("Please enter a correct age")
+    }
+}
+
+planetAge(40,"Jupiter")
+
 //===========================================================================================================
 
 //7. Declare a function called numberFilter that takes in an array called ‘names’ as a parameter. The array will have a mixture of non-negative numbers and strings, and returns a new array without the strings.
