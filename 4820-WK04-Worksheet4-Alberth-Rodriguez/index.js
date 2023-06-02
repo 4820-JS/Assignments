@@ -34,6 +34,7 @@ console.log(`test`)
 //Answer
 
 //Whithout Array
+
 function coinConvert(num){
     let quarter = 25
     let dime = 10
@@ -66,6 +67,32 @@ function coinConvert(num){
 }
 coinConvert(49)
 
+//With Array
+
+function coin_Convert(num){
+    let value = [25,10,5,1]
+    let coins = [0,0,0,0]
+    
+    if (num < 1 || num > 100){   
+        console.log(`Icorrect, the number should be between 1 and 100`)
+    }else if (1 < num < 100){
+        if (num >= 25){
+        coins[0] = num / value[0]
+        num = num % value[0]
+    }if (num >= 10){
+        coins[1] = num / value[1]
+        num = num % value[1]
+    }if  (num >= 5){
+        coins[2] = num / value[2]
+        num = num % value[2]
+    }if  (num >= 1){
+        coins[3] = num / value[3]
+        num = num % value[3]
+    }
+    console.log(" Quarter: ",Math.floor(coins[0]),", Dime: ",Math.floor(coins[1]),", Nickel: ",Math.floor(coins[2]),", Penny: ",Math.floor(coins[3]))
+}
+}
+coin_Convert(48)
 
 //===========================================================================================================
 
