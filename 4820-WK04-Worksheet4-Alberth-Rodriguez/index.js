@@ -169,7 +169,24 @@ function string_Sort (array){
 
 console.log(string_Sort(array))
 
+//Without .sort method
+function stringSort (array){
+    let done = false
+    while (done === false){
+        done = true
+        for(let i = 0 ; i < array.length-1 ; i++){
+            if (array[i].length > array[i+1].length){
+              let value = array[i]
+              array[i] = array[i+1]
+              array[i+1] = value
+              done = false 
+            }
+          }
+        }
+        console.log(array)
+    }
 
+stringSort(array)
 
 //===========================================================================================================
 
