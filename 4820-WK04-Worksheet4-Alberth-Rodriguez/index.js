@@ -167,6 +167,10 @@ function string_Sort (array){
     return array.sort((a,b) => a.length - b.length)
 }
 
+console.log(string_Sort(array))
+
+
+
 //===========================================================================================================
 
 //9. A group of students have decided to start a club at Langara. The name of the club will be the first letter of each of their names, sorted in alphabetical order. Declare a function called groupName that has an array as a parameter, and returns the name of the club.
