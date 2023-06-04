@@ -256,6 +256,16 @@ function groupName (clubNames){
 
 groupName(clubNames)
 
+//Whithout .charAt Method
+function group_Name (clubNames){
+    let club = ``
+    for (let name of clubNames.sort()){
+        club += name[0]
+    }const answer9 = `"`+club+` Club2`+`"`
+    console.log(answer9)
+}
+group_Name(clubNames)
+
 //===========================================================================================================
 
 //10. Declare a function named symNum that has a parameter called num, and returns true or false depending on whether the number is symmetrical or not. A number is symmetrical when it is the same as its reverse.
