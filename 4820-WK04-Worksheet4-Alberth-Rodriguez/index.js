@@ -88,7 +88,9 @@ function coinConvert(num){
         pennyCoins = num / penny
         num = num % penny
     }
-    console.log(" Quarter: ",Math.floor(quarterCoins),", Dime: ",Math.floor(dimeCoins),", Nickel: ",Math.floor(nickelCoins),", Penny: ",Math.floor(pennyCoins) )
+    const answer51 = ("Quarter: "+Math.floor(quarterCoins)+", Dime: "+Math.floor(dimeCoins)+", Nickel: "+Math.floor(nickelCoins)+", Penny: "+Math.floor(pennyCoins) )
+    console.log(answer51)
+    console.log("Quarter: ",Math.floor(quarterCoins),", Dime: ",Math.floor(dimeCoins),", Nickel: ",Math.floor(nickelCoins),", Penny: ",Math.floor(pennyCoins) )
 }
 }
 coinConvert(49)
@@ -119,8 +121,10 @@ function coin_Convert(num){
         coins[i] = num / value[i]
         num = num % value[i]
     }
-    console.log(" Quarter: ",Math.floor(coins[0]),", Dime: ",Math.floor(coins[1]),", Nickel: ",Math.floor(coins[2]),", Penny: ",Math.floor(coins[3]))
-}
+    const answer52 = "Quarter: "+Math.floor(coins[0])+", Dime: "+Math.floor(coins[1])+", Nickel: "+Math.floor(coins[2])+", Penny: "+Math.floor(coins[3])
+    console.log(answer52)
+    console.log("Quarter: ",Math.floor(coins[0]),", Dime: ",Math.floor(coins[1]),", Nickel: ",Math.floor(coins[2]),", Penny: ",Math.floor(coins[3]))
+    }
 }
 coin_Convert(38)
 
@@ -178,7 +182,10 @@ function numberFilter (names){
         }else{
             i++
         }
-    }console.log("[",names2.join(", "),"]")
+    }
+    const answer7= "["+names2.join(", ")+"]"
+    console.log(answer7)
+    console.log("[",names2.join(", "),"]")
 }
 numberFilter(names)
 
@@ -242,6 +249,8 @@ function groupName (clubNames){
         // name.push(clubNames[i].charAt(0))
         names += name2[i].charAt(0)
     }
+    const answer9 = `"`+names+` Club`+`"`
+    console.log(answer9)
     console.log(names,"Club")
 }
 
