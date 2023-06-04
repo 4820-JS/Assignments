@@ -231,6 +231,28 @@ groupName(clubNames)
 //false
 //Answer
 
+function symNum (nume){
+    const num = nume.toString()
+    let num2 = []
+    for(let i = num.length ; i > 0 ; i--){
+        num2.push(num[i-1])
+    }
+    let num3 = []
+    for(let j = 0 ; j < num.length ; j++){
+        num3.push(num[j])
+    }
+    let answ = Boolean
+    for(let k =0 ; k < num2.length ; k++){
+        if (num2[k] !== num3[k]){
+            answ = false
+        }else{
+            answ = true
+        } 
+    }console.log(answ)
+}
+
+symNum(123)
+symNum(121)
 
 
 
