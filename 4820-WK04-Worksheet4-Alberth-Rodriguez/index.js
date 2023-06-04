@@ -3,11 +3,31 @@ console.log(`test`)
 
 // 1. In your own words, explain the difference between parameters and arguments.
 //Answer
+//Parameter is the definition of a variable on a function and the argument is the value that the parameter is gonna take in the function:
 
+//=>Defining the function:
+
+// function example(parameter1, parameter2){
+//    let answe = parameter1+parameter2
+//    console.log(answe)
+// }
+
+
+//=>Calling the function:
+
+// "example(argument1, argument2)"
+// example(1,2)
+//Output:
+// 3
+
+//parameter1 = argument1
+//parameter2 = argument2
 //===========================================================================================================
 
 // 2. Why would we want to use a return value, using the keyword ‘return’, in a function?
 //Answer
+
+//It makes easier to have an available value ready to work within the code.
 
 //===========================================================================================================
 
@@ -15,11 +35,17 @@ console.log(`test`)
 // 3. What is meant by “calling a function”?
 //Answer
 
+//It means providing the function with the argument(s) (real value(s)) to let the function do the algorithm and provide a final result. 
+
 //===========================================================================================================
 
 
 // 4. In your own words, explain why we would use a function.
 //Answer
+
+//We can use a function when we have to do the same operation or the same process several times, by doing those "mini programs" we can just call them whenever we need as many times we want to.
+
+//mini programs = functions
 
 //===========================================================================================================
 
