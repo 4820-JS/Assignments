@@ -189,6 +189,20 @@ function numberFilter (names){
 }
 numberFilter(names)
 
+//Whithout Math.sign Method
+function number_Filter(names){
+    let num = []
+    for(let name of names){
+        const isNum = typeof name =="number"
+        if (isNum){
+            num.push(name)
+        }
+    }const answer7= "["+num.join(", ")+"]2"
+    console.log(answer7)
+}
+
+number_Filter(names)
+
 //===========================================================================================================
 
 //8. Declare a function called stringSort and an array with at least 6 strings of varied length. stringSort returns an array of strings sorted by length in ascending order.
