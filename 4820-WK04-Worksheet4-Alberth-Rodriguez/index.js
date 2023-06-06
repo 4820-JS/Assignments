@@ -122,11 +122,11 @@ function coin_Convert(num){
         num = num % value[i]
     }
     const answer52 = "Quarter: "+Math.floor(coins[0])+", Dime: "+Math.floor(coins[1])+", Nickel: "+Math.floor(coins[2])+", Penny: "+Math.floor(coins[3])
-    console.log(answer52)
-    console.log("Quarter: ",Math.floor(coins[0]),", Dime: ",Math.floor(coins[1]),", Nickel: ",Math.floor(coins[2]),", Penny: ",Math.floor(coins[3]))
+    return answer52
     }
 }
-coin_Convert(38)
+
+console.log(coin_Convert(49))
 
 //===========================================================================================================
 
