@@ -88,12 +88,12 @@ function coinConvert(num){
         pennyCoins = num / penny
         num = num % penny
     }
-    const answer51 = ("Quarter: "+Math.floor(quarterCoins)+", Dime: "+Math.floor(dimeCoins)+", Nickel: "+Math.floor(nickelCoins)+", Penny: "+Math.floor(pennyCoins) )
-    console.log(answer51)
-    console.log("Quarter: ",Math.floor(quarterCoins),", Dime: ",Math.floor(dimeCoins),", Nickel: ",Math.floor(nickelCoins),", Penny: ",Math.floor(pennyCoins) )
+        const answer51 = ("Quarter: "+Math.floor(quarterCoins)+", Dime: "+Math.floor(dimeCoins)+", Nickel: "+Math.floor(nickelCoins)+", Penny: "+Math.floor(pennyCoins) )
+        return answer51
+    }
 }
-}
-coinConvert(49)
+
+console.log(coinConvert(59))
 
 //With Array
 
