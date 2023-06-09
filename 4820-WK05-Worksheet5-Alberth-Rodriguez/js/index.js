@@ -20,6 +20,7 @@ submitBtn.addEventListener("click", function(){
         resut += `• Dance move #${[i+1]}: ${danceArr[i]}<br>`
         danceInput.placeholder=`Dance Type #${[i+2]}`
     }
+            danceInput.value = ""
     // danceList.innerHTML = "<h2>Your Dance Moves:</h2>"
     danceList.innerHTML = "<h2>Your Dance Moves:</h2>"+resut
     }
