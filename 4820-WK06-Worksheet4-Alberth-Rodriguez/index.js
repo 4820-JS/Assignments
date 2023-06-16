@@ -18,6 +18,25 @@ console.log ("test")
 
 //(5). Using the HTML code below, create a currency converter, to change Canadian dollars to British pounds or vice versa, depending on which button is clicked . Output to the UI (webpage) a message that says the original amount, and the changed amount. 
 
+// cadBtn.addEventListener("click", function(e){
+//     e.preventDefault()
+//     if(amount.value.length > 0){
+//         let value = Number(amount.value) / 0.59
+//         // console.log(value)
+//         outputArea.innerHTML = amount.value + ` British pound(s) = ` + value.toFixed(2) + ` Canadian dollar(s)`
+//     }
+    
+// })
+
+// gbpBtn.addEventListener("click", function(e){
+//     e.preventDefault()
+//     if(amount.value.length > 0){
+//         let value = Number(amount.value)*0.59
+//         // console.log(value)
+//         outputArea.innerHTML = amount.value + ` Canadian dollar(s) = ` + value.toFixed(2) + ` British pound(s)`
+//     }
+    
+// })
 
 //======================================================================
 
