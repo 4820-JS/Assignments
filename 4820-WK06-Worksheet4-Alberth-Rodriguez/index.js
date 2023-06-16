@@ -82,6 +82,44 @@ console.log ("test")
 // Total bill: $65.00
 // Split total: $13.00
 
+// let billArr = []
+
+// submitBtn.addEventListener("click", function(e){
+//     e.preventDefault()
+//     if(billAmount.value.length > 0 && taxPercent.value.length > 0 && tipPercent.value.length > 0 && splitAmount.value.length > 0){
+//         let bill = Number (billAmount.value)
+//         let bill2 = bill / bill
+
+//         let tax = Number (taxPercent.value)
+//         let tax2 = tax / tax
+
+//         let tip = Number (tipPercent.value)
+//         let tip2 = tip / tip
+
+//         let people = Number (splitAmount.value)
+//         let people2 = people / people
+
+//         let fullBill = ``
+
+//         if (bill2 === 1 && tax2 === 1 && tip2 === 1 && people2 === 1) {
+//             fullBill = `Original bill amount: $${bill}<br> 
+//                         Tax amount: $${(bill*(tax/100)).toFixed(2)}<br> 
+//                         Tip amount: $${(bill*(tip/100)).toFixed(2)}<br> 
+//                         Split between: ${people} people <br> 
+//                         Total bill: $${(bill+(bill*(tax/100))+(bill*(tip/100))).toFixed(2)} <br> 
+//                         Split total: $${((bill+(bill*(tax/100))+(bill*(tip/100)))/people).toFixed(2)}`
+        
+//             billOutput.value = ``
+//             billAmount.value = ``
+//             taxPercent.value = ``
+//             tipPercent.value = ``
+//             splitAmount.value = ``
+//             billOutput.innerHTML = fullBill
+
+//           }else{billOutput.innerHTML = "Must type numbers !!"}
+
+//     }else {billOutput.innerHTML = "Fill in all the boxes !!"}
+// })
 
 //======================================================================
 
