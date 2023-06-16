@@ -125,7 +125,27 @@ console.log ("test")
 
 //(8). Using the HTML code below, write some code that converts temperature from Celsius to Fahrenheit, or from Fahrenheit to Celsius, depending on the button pressed. You will have to search the conversion formula. 
 
-
+// fahrConvert.addEventListener("click", function(e){
+//         e.preventDefault()
+//         if(tempAmount.value.length > 0){
+//             if((tempAmount.value+1)/(tempAmount.value+1) ===1){
+//             let fahrenheit = ((9/5)*tempAmount.value)+32
+//             tempOutput.innerHTML = `${tempAmount.value} °C = ${fahrenheit.toFixed(2)} °F`}
+//             else{tempOutput.innerHTML = "Must type a number !!"}
+//             tempAmount.value = ``
+//         }else{tempOutput.innerHTML = "Fill in the box !!"}
+// })
+    
+// celConvert.addEventListener("click", function(e){
+//     e.preventDefault()
+//     if(tempAmount.value.length > 0){
+//         if((tempAmount.value+1)/(tempAmount.value+1) ===1){
+//         let celsius = (5*(tempAmount.value - 32))/9
+//         tempOutput.innerHTML = `${tempAmount.value} °F = ${celsius.toFixed(2)} °C`}
+//         else{tempOutput.innerHTML = "Must type a number !!"}
+//         tempAmount.value = ``
+//     }else{tempOutput.innerHTML = "Fill in the box !!"}
+// })
 
 //======================================================================
 
