@@ -42,6 +42,34 @@ console.log ("test")
 
 //(6). Using the HTML below, write code that allows the user to add flower types to a bouquet, and output a list to the UI. The flower types cannot repeat.
 
+// let flowArr = []
+// let flowArr2 = []
+
+// submitBtn.addEventListener("click", function(e){
+//     e.preventDefault()
+    
+//     if(flowerName.value.length > 0 ){
+//         let list = ""
+//         // let flower = toUpperCase(flowerName.value)
+//         let flower = flowerName.value.toUpperCase()
+//         flowArr.push(flower)
+//         flowArr2 = flowArr.filter((flow,j)=>{
+//             return flowArr.indexOf(flow) === j;
+//           })
+
+//         // console.log(flowArr)
+//         // bouquetList.innerHTML = flowArr
+
+//         for(let i = 0; i < flowArr2.length; i++){
+//             list += `• Flower #${[i+1]}: ${flowArr2[i]}<br>`
+//         }
+//         flowerName.value = ""
+//         bouquetList.innerHTML = list
+//         // console.log(list)
+//         // console.log(flowArr)
+//         // console.log(flowArr2)
+//     }
+// })
 
 //======================================================================
 
