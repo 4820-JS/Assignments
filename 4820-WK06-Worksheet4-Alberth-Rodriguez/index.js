@@ -20,6 +20,10 @@ console.log ("test")
 
 //(3). What does .toFixed() do, what do you put in the brackets, and does it round up or down?
 
+//The function ".toFixed( )" round up the number with the amount of decimals we put on the brackets.
+
+// console.log (num.toFixed(3))
+
 //======================================================================
 
 //(4). What datatype do we get from an input box when we use .value?
