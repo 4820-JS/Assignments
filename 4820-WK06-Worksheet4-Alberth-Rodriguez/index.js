@@ -2,6 +2,9 @@ console.log ("test")
 //======================================================================
 //(1). In your own words, explain the difference between a selection and an event listener.
 
+//Selection is the process we use to identifying element on HTML by `id`, `class`, `tag` etc.
+//An event listener allow us to set up an event if something happen like a `click`, `keydown`, `mouseover` etc.
+
 //======================================================================
 
 //(2). What are two ways to round up a decimal number to an integer?
