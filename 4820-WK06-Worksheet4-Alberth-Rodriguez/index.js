@@ -28,6 +28,8 @@ console.log ("test")
 
 //(4). What datatype do we get from an input box when we use .value?
 
+//We will receive a value with a String datatype
+
 //======================================================================
 
 //(5). Using the HTML code below, create a currency converter, to change Canadian dollars to British pounds or vice versa, depending on which button is clicked . Output to the UI (webpage) a message that says the original amount, and the changed amount. 
