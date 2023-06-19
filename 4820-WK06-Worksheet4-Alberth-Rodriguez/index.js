@@ -9,6 +9,13 @@ console.log ("test")
 
 //(2). What are two ways to round up a decimal number to an integer?
 
+//We can use the function "Math.ceil( )" or the operator "|" and add 1.
+
+//let num =  3.535736
+
+// console.log (Math.ceil(num))
+// console.log ((num | 0)+1)
+
 //======================================================================
 
 //(3). What does .toFixed() do, what do you put in the brackets, and does it round up or down?
