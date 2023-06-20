@@ -148,26 +148,33 @@ console.log ("test")
 //======================================================================
 
 //(8). Using the HTML code below, write some code that converts temperature from Celsius to Fahrenheit, or from Fahrenheit to Celsius, depending on the button pressed. You will have to search the conversion formula. 
+//Answer
 
+// //create an event to attach an event handler to the bottom
 // fahrConvert.addEventListener("click", function(e){
-//         e.preventDefault()
-//         if(tempAmount.value.length > 0){
-//             if((tempAmount.value+1)/(tempAmount.value+1) ===1){
-//             let fahrenheit = ((9/5)*tempAmount.value)+32
-//             tempOutput.innerHTML = `${tempAmount.value} °C = ${fahrenheit.toFixed(2)} °F`}
-//             else{tempOutput.innerHTML = "Must type a number !!"}
-//             tempAmount.value = ``
-//         }else{tempOutput.innerHTML = "Fill in the box !!"}
+//         e.preventDefault()//Prevents the default form submission behavior
+//         if(tempAmount.value.length > 0){//Check if the box is NOT empty
+//             if((tempAmount.value+1)/(tempAmount.value+1) ===1){//Other way to validate there is a number in the box
+//             let fahrenheit = ((9/5)*tempAmount.value)+32 // Calculate the equivalent
+//             tempOutput.innerHTML = `${tempAmount.value} °C = ${fahrenheit.toFixed(2)} °F`}//Print out the conversion
+//             else{tempOutput.innerHTML = "Must type a number !!"}//message
+//             tempAmount.value = ``//empty the box
+//         }else{//if the box is empty
+//             tempOutput.innerHTML = "Fill in the box !!"//message
+//         }
 // })
     
+// //create an event to attach an event handler to the bottom
 // celConvert.addEventListener("click", function(e){
-//     e.preventDefault()
+//     e.preventDefault()//Prevents the default form submission behavior
 //     if(tempAmount.value.length > 0){
-//         if((tempAmount.value+1)/(tempAmount.value+1) ===1){
-//         let celsius = (5*(tempAmount.value - 32))/9
-//         tempOutput.innerHTML = `${tempAmount.value} °F = ${celsius.toFixed(2)} °C`}
-//         else{tempOutput.innerHTML = "Must type a number !!"}
-//         tempAmount.value = ``
-//     }else{tempOutput.innerHTML = "Fill in the box !!"}
+//         if((tempAmount.value+1)/(tempAmount.value+1) ===1){//Other way to validate there is a number in the box
+//         let celsius = (5*(tempAmount.value - 32))/9 // Calculate the equivalent
+//         tempOutput.innerHTML = `${tempAmount.value} °F = ${celsius.toFixed(2)} °C`}//Print out the conversion
+//         else{tempOutput.innerHTML = "Must type a number !!"}//message
+//         tempAmount.value = ``//empty the box
+//     }else{//if the box is empty
+//         tempOutput.innerHTML = "Fill in the box !!"//message
+//     }
 // })
 
