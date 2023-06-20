@@ -33,25 +33,40 @@ console.log ("test")
 //======================================================================
 
 //(5). Using the HTML code below, create a currency converter, to change Canadian dollars to British pounds or vice versa, depending on which button is clicked . Output to the UI (webpage) a message that says the original amount, and the changed amount. 
+//Answer
 
+// //create an event to attach an event handler to the bottom
 // cadBtn.addEventListener("click", function(e){
-//     e.preventDefault()
-//     if(amount.value.length > 0){
-//         let value = Number(amount.value) / 0.59
-//         // console.log(value)
-//         outputArea.innerHTML = amount.value + ` British pound(s) = ` + value.toFixed(2) + ` Canadian dollar(s)`
+//     e.preventDefault() //Prevents the default form submission behavior
+//     if(amount.value.length > 0){//Check if the box is NOT empty
+//         let value = Number(amount.value) / 0.59//Calculate the equivalent value
+//         if (isNaN(value)){//Check if the box is NOT a number
+//             outputArea.innerHTML = `Not a Number`//message
+//             amount.value = ``//empty the box
+//         }else{//If the value in the box is a number 
+//         outputArea.innerHTML = amount.value + ` British pound(s) = ` + value.toFixed(2) + ` Canadian dollar(s)`//message
+//         amount.value = ``//empty the box
+//         }
+//     }else{//If the box is empty
+//         outputArea.innerHTML = `Type some amount`//message
 //     }
-    
 // })
 
+// //create an event to attach an event handler to the bottom
 // gbpBtn.addEventListener("click", function(e){
-//     e.preventDefault()
-//     if(amount.value.length > 0){
-//         let value = Number(amount.value)*0.59
-//         // console.log(value)
-//         outputArea.innerHTML = amount.value + ` Canadian dollar(s) = ` + value.toFixed(2) + ` British pound(s)`
+//     e.preventDefault() //Prevents the default form submission behavior
+//     if(amount.value.length > 0){//Check if the box is NOT empty
+//         let value = Number(amount.value)*0.59 //Calculate the equivalent value
+//         if (isNaN(value)){//Check if the box is NOT a number
+//             outputArea.innerHTML = `Not a Number`//message
+//             amount.value = ``//empty the box
+//         }else{//If the value in the box is a number
+//         outputArea.innerHTML = amount.value + ` Canadian dollar(s) = ` + value.toFixed(2) + ` British pound(s)`//message
+//         amount.value = ``//empty the box
+//         }
+//     }else{//If the box is empty
+//         outputArea.innerHTML = `Type some amount`//message
 //     }
-    
 // })
 
 //======================================================================
