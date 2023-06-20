@@ -73,32 +73,28 @@ console.log ("test")
 
 //(6). Using the HTML below, write code that allows the user to add flower types to a bouquet, and output a list to the UI. The flower types cannot repeat.
 
-// let flowArr = []
-// let flowArr2 = []
-
+// let flowArr = [] // Array to storage al flowers
+// let flowArr2 = [] //Array to storage all flowers with no repetition
+// //create an event to attach an event handler to the bottom
 // submitBtn.addEventListener("click", function(e){
-//     e.preventDefault()
+//     e.preventDefault()//Prevents the default form submission behavior
     
-//     if(flowerName.value.length > 0 ){
+//     if(flowerName.value.length > 0 ){//Check if the box is NOT empty
 //         let list = ""
-//         // let flower = toUpperCase(flowerName.value)
 //         let flower = flowerName.value.toUpperCase()
-//         flowArr.push(flower)
+//         flowArr.push(flower)//Push the value of the box onto the flowArr
 //         flowArr2 = flowArr.filter((flow,j)=>{
 //             return flowArr.indexOf(flow) === j;
-//           })
-
-//         // console.log(flowArr)
-//         // bouquetList.innerHTML = flowArr
+//           })//Push the value of the box onto the flowArr2 while the value is still NOT there
 
 //         for(let i = 0; i < flowArr2.length; i++){
-//             list += `• Flower #${[i+1]}: ${flowArr2[i]}<br>`
+//             list += `• Flower #${[i+1]}: ${flowArr2[i]}<br>` //Create the output to print out
 //         }
-//         flowerName.value = ""
-//         bouquetList.innerHTML = list
-//         // console.log(list)
-//         // console.log(flowArr)
-//         // console.log(flowArr2)
+//         flowerName.value = ""//empty the box
+//         bouquetList.innerHTML = list// Print out
+        
+//     }else{//If the box is empty
+//         bouquetList.innerHTML = `Type some amount`//message
 //     }
 // })
 
@@ -106,50 +102,47 @@ console.log ("test")
 
 //(7). Using the HTML code below, write code that creates a bill splitter for a restaurant. The UI should have an output that breaks down all the information given. Therefore, it needs to include the original bill, the tax amount, the tip amount, the number of people to split the bill between, the total bill with tax and tip added, and finally, the split amount. For example:
 
-// Original bill amount: $50.00
-// Tax amount: $5.00
-// Tip amount: $ 10.00
-// Split between: 5 people
-// Total bill: $65.00
-// Split total: $13.00
+//Answer
 
-// let billArr = []
-
+// //create an event to attach an event handler to the bottom
 // submitBtn.addEventListener("click", function(e){
-//     e.preventDefault()
-//     if(billAmount.value.length > 0 && taxPercent.value.length > 0 && tipPercent.value.length > 0 && splitAmount.value.length > 0){
+//     e.preventDefault()//Prevents the default form submission behavior
+//     if(billAmount.value.length > 0 && taxPercent.value.length > 0 && tipPercent.value.length > 0 && splitAmount.value.length > 0){//Check if the box is NOT empty
 //         let bill = Number (billAmount.value)
-//         let bill2 = bill / bill
+//         let bill2 = bill / bill// For future alidation
 
 //         let tax = Number (taxPercent.value)
-//         let tax2 = tax / tax
+//         let tax2 = tax / tax// For future alidation
 
 //         let tip = Number (tipPercent.value)
-//         let tip2 = tip / tip
+//         let tip2 = tip / tip// For future alidation
 
 //         let people = Number (splitAmount.value)
-//         let people2 = people / people
+//         let people2 = people / people// For future alidation
 
 //         let fullBill = ``
-
-//         if (bill2 === 1 && tax2 === 1 && tip2 === 1 && people2 === 1) {
+//         if (bill2 === 1 && tax2 === 1 && tip2 === 1 && people2 === 1) {//Check if the value boxes are a number (This is necessary if we want to return a message)
 //             fullBill = `Original bill amount: $${bill}<br> 
 //                         Tax amount: $${(bill*(tax/100)).toFixed(2)}<br> 
 //                         Tip amount: $${(bill*(tip/100)).toFixed(2)}<br> 
 //                         Split between: ${people} people <br> 
 //                         Total bill: $${(bill+(bill*(tax/100))+(bill*(tip/100))).toFixed(2)} <br> 
-//                         Split total: $${((bill+(bill*(tax/100))+(bill*(tip/100)))/people).toFixed(2)}`
+//                         Split total: $${((bill+(bill*(tax/100))+(bill*(tip/100)))/people).toFixed(2)}`//Create the output with the operations
         
-//             billOutput.value = ``
-//             billAmount.value = ``
-//             taxPercent.value = ``
-//             tipPercent.value = ``
-//             splitAmount.value = ``
-//             billOutput.innerHTML = fullBill
+//             billOutput.value = ``//empty the box
+//             billAmount.value = ``//empty the box
+//             taxPercent.value = ``//empty the box
+//             tipPercent.value = ``//empty the box
+//             splitAmount.value = ``//empty the box
+//             billOutput.innerHTML = fullBill//Print out the Bill
 
-//           }else{billOutput.innerHTML = "Must type numbers !!"}
+//           }else{//If the previous validation fails we can print out a message
+//             billOutput.innerHTML = "Must type numbers !!" //message
+//             }
 
-//     }else {billOutput.innerHTML = "Fill in all the boxes !!"}
+//     }else {//if there are an empty box(es)
+//         billOutput.innerHTML = "Fill in all the boxes !!"//message
+//     }
 // })
 
 //======================================================================
