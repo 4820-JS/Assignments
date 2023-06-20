@@ -1,14 +1,14 @@
 console.log ("test")
 //======================================================================
 //(1). In your own words, explain the difference between a selection and an event listener.
-
+//Answer
 //Selection is the process we use to identifying element on HTML by `id`, `class`, `tag` etc.
 //An event listener allow us to set up an event if something happen like a `click`, `keydown`, `mouseover` etc.
 
 //======================================================================
 
 //(2). What are two ways to round up a decimal number to an integer?
-
+//Answer
 //We can use the function "Math.ceil( )" or the operator "|" and add 1.
 
 //let num =  3.535736
@@ -19,7 +19,7 @@ console.log ("test")
 //======================================================================
 
 //(3). What does .toFixed() do, what do you put in the brackets, and does it round up or down?
-
+//Answer
 //The function ".toFixed( )" round up the number with the amount of decimals we put on the brackets.
 
 // console.log (num.toFixed(3))
@@ -27,7 +27,7 @@ console.log ("test")
 //======================================================================
 
 //(4). What datatype do we get from an input box when we use .value?
-
+//Answer
 //We will receive a value with a String datatype
 
 //======================================================================
@@ -72,6 +72,7 @@ console.log ("test")
 //======================================================================
 
 //(6). Using the HTML below, write code that allows the user to add flower types to a bouquet, and output a list to the UI. The flower types cannot repeat.
+//Answer
 
 // let flowArr = [] // Array to storage al flowers
 // let flowArr2 = [] //Array to storage all flowers with no repetition
