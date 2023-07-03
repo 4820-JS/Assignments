@@ -183,6 +183,80 @@ function objLength(object){ // define unction
 
 console.log(objLength(cookie))
 
+//======================================================================
+console.log('8 ========================================================================')
+
+//(8).............Setup:
+// Use the following array of objects in this question:
+
+let bookshelf = [
+    { title: "The Animator's Survival Kit",
+      author: "Richard Williams",
+      rating: 2.7,
+      read: true
+    },
+    { title: "Electronics All-in-one",
+      author: "Doug Lowe",
+      rating: 4.2,
+      read: false
+    },
+    { title: "The Calvin and Hobbs Lazy Sunday Book",
+      author: "Bill Watterson",
+      rating: 8.7,
+      read: true
+    },
+    { title: "The Count of Monte Cristo",
+      author: "Alexander Dumas",
+      rating: 3.9,
+      read: true
+    },
+    { title: "Lore Olympus: Volume 4",
+      author: "Rachel Smythe",
+      rating: 6.7,
+      read: false
+    },
+]
+
+//...............Problem:
+// Write a function worthReading, which returns a string that has the reading status of each book.
+// If a book is NOT yet read, and has a rating under 5, then tell the person to skip it.
+
+//.................Allowed tools:
+// Loops, if/else, switch, variables, arrays (no array methods),
+// functions (you can use arrow functions),
+// Math library (Math.floor, Math.ceil, Math.round, Math.random),
+// toFixed(), calculations and booleans (+,-,/,*,%, <, <=, >=, >, ===)
+
+function worthReading (arrBooks){//define the function
+    let book = "" //define varible to save every object temporary 
+    let title = [] //define an empty array for titles
+    let author = [] //define an empty array for author
+    let rating = [] //define an empty array for rating
+    let read = [] //define an empty array for read
+    for (let i = 0; i < arrBooks.length; i++) {
+        book = arrBooks[i]
+        title.push(book.title) //saving titles
+        author.push(book.author) //saving names
+        rating.push(book.rating) //saving rating
+        read.push(book.read) //saving is read
+    }
+    let answ = ''// define the answer
+    for (let i = 0; i < title.length; i++) {
+        // let answ = ''
+        if (read[i] == true){ //save if the book has been read
+            answ += `${title[i]} by ${author[i]} has already been read.\n`
+        }else if (rating[i] > 5){ //save if the book has not been read
+            answ += `${title[i]} by ${author[i]} has not been read.\n`
+        }else if (rating[i] < 5){ //save if the book should be skipped
+            answ += `${title[i]} by ${author[i]} should be skipped.\n`
+        }
+    }
+    return answ //return the answer
+}
+
+console.log(worthReading(bookshelf))
+
+
 
 
 
