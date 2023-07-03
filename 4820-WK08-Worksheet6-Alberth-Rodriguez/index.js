@@ -29,3 +29,9 @@ console.log("test")
 // object[`key3`] => C
 
 //======================================================================
+
+//(3)What is the purpose of the keyword "this"?, Why do we use it?
+
+//The purpose of the keyword "this" is to allow as to use any key or method within an object 
+//so we use "this" to access and manipulate properties and methods within an object
+
