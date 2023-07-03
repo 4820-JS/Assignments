@@ -11,3 +11,21 @@ console.log("test")
 // Arrays are collections of elements most of the times of the same data type (string, number, boolean...) but also combined 
 
 //======================================================================
+
+//(2) How do you access a value from an object in coding terms ?
+
+// There are 2 way to access a value object :
+
+// let object = {
+//     key1: "A",
+//     key2: "B",
+//     key3: "C"
+// }
+
+// With dot
+// object.key1 => A
+
+// With brackets
+// object[`key3`] => C
+
+//======================================================================
