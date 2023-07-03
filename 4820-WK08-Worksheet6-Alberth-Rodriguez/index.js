@@ -257,6 +257,51 @@ function worthReading (arrBooks){//define the function
 console.log(worthReading(bookshelf))
 
 
+//======================================================================
+console.log('9 ========================================================================')
+
+//(9)..........Setup:
+// Use the following object for this question:
+
+let ikeaCouch = {
+    esseboda: 1499.00,
+    morabo: 1399.00,
+    applaryd: 1890.00,
+    soderhamn: 900.00,
+    stockholm: 2690.00,
+    jatterbo: 150.00,
+    friheten: 1098.00
+}
+
+//.............Problem:
+// You go to Ikea to replace your couch, and try to find the most expensive one there,
+// as you have high end tastes. You write down the name of each couch and its 
+// price in the object above.
+// Create a function called mostExpensive that gets the name of the couch with the highest
+// price and returns "The most expensive one is the {name of couch}".
+
+//.................Allowed tools:
+// Loops, if/else, switch, variables, arrays (no array methods),
+// functions (you can use arrow functions),
+// Math library (Math.floor, Math.ceil, Math.round, Math.random),
+// toFixed(), calculations and booleans (+,-,/,*,%, <, <=, >=, >, ===)
+
+
+function mostExpensive(couch){ // define unction
+    let price = ''//define varible to save every object price temporary 
+    let name = ''//define varible to save every object name temporary 
+    for (key in couch){
+        if (couch[key] > price){
+            price = couch[key] //save the price if is >
+            name = key //save the name if is >
+        }
+    }
+    let ans = `"The most expensive one is the ${name}".`
+    return ans //return the answer
+}
+
+console.log(mostExpensive(ikeaCouch))
+
 
 
 
