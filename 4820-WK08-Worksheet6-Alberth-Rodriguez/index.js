@@ -147,6 +147,41 @@ movieStore.rent() //rent 1 so 1 available
 movieStore.rent() //rent 1 so 0 available
 movieStore.checkIfAvailable()
 
+//======================================================================
+console.log('7 ========================================================================')
+
+//(7)..............Setup:
+// Create a cookie object called cookie, that has different ingredient 
+// parameters and their amounts, such as flour: "2 cups", or flour: "250 grams"
+//.................Problem:
+// Create a function called objLength that takes in your object as a parameter 
+// and returns the length of the object. In other words,
+// it returns the number of elements in an object.
+//.................Allowed tools:
+// Loops, if/else, switch, variables, arrays (no array methods),
+// functions (you can use arrow functions),
+// Math library (Math.floor, Math.ceil, Math.round, Math.random),
+// toFixed(), calculations and booleans (+,-,/,*,%, <, <=, >=, >, ===)
+
+let cookie = { // define parameters
+    butter:"1 cup",
+    sugar:"1 cup",
+    eggs: 2,
+    vanilla: "2 teaspoons",
+    bakingSoda: "1 teaspoons",
+    hotWater: "1 teaspoons",
+    salt: "0.5 teaspoons",
+    flour: "3 cups"
+}
+
+function objLength(object){ // define unction
+    i=0
+    for (key in object){
+	i++ //instead of printing out all the parameters (as we learned in class) just add to i how many there are
+    } return i //return the answer
+}
+
+console.log(objLength(cookie))
 
 
 
