@@ -35,3 +35,12 @@ console.log("test")
 //The purpose of the keyword "this" is to allow as to use any key or method within an object 
 //so we use "this" to access and manipulate properties and methods within an object
 
+//======================================================================
+
+//(4) Describe in your own words why we would use an object instead of an array.
+
+// Because objects are more flexible and they help us to model more complex data
+// that could be associated theo the real world.
+// in short word arrays are for simple data and objects for more complex data.
+
+
