@@ -77,3 +77,43 @@ addItem.addEventListener("click", function () {//Click event listener to the ele
     }
     userInput.value = ""//clean the input box 
 })
+
+//=================================Update Task List=============================================
+
+updateList.addEventListener("click", function () {//Click event listener to the element with the id "updateList"
+
+    let todo3 = [] //array to update
+
+    for (let i = 0; i < todo.length - 1; i++) {//for loop
+        if (todo[i].check === false) {//if the check parameter is true 
+            todo3.push(todo[i]) //save the object into the new array
+        }
+    }
+
+    tableBody.innerHTML = ''//clean the table
+
+    for (let i = 0; i < todo3.length; i++) {//foor loop to print the table without the checked
+
+        let row = tableBody.insertRow(i)//insert new row
+        row.setAttribute("id", `row${i}`)//set attributes for the new row
+
+        let cell1 = row.insertCell(0)//insert new cell for task
+        cell1.setAttribute("id", `task${i}`)//set atributes for task cell
+        let cell2 = row.insertCell(1)//insert new cell for added
+        cell2.setAttribute("id", `added${i}`)//set atributes for added cell
+        let cell3 = row.insertCell(2)//insert new cell for check
+
+        let cell4 = row.insertCell(3)//insert new cell for omplete
+        cell4.setAttribute("id", `completed${i}`)//set atributes for completed cell
+
+        cell1.innerHTML = todo3[i].task//assign value to the cell1
+        cell2.innerHTML = todo3[i].added//assign value to the cell2
+        if (todo3[i].check == true) {
+            cell3.innerHTML = `<input type="checkbox" id="${i}" checked>`//assign value to the cell3 if checked
+        } else {
+            cell3.innerHTML = `<input type="checkbox" id="${i}">`//assign value to the cell3 if not checked
+        }
+        cell4.innerHTML = todo3[i].completed   //assign value to the cell4
+    }
+
+})
