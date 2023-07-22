@@ -16,243 +16,122 @@
 
 //====================Insert Table Headers==============================
 
-function insertTablaHeaders() {
-    let headersArr =["Meal Name", "Meal Type", "Meal Origin", "Select"];
+function insertTablaHeaders() {//function to create table header
 
+    let headersArr = ["Meal Name", "Meal Type", "Meal Origin", "Select"]//new array to save 4 headers table
+    let table = document.createElement("table")//define table and create new element on document
 
-    let table = document.createElement("table");
-    table.setAttribute("id", "mealTable"); // Agregar el atributo id a la tabla
-    table.setAttribute("class","card")
+    table.setAttribute("id", "mealTable")// setup attribute id
+    table.setAttribute("class", "card") // setup attribute class
 
-    let headerRow = document.createElement("tr");
-    for (let headerText of headersArr) {
-        let headerCell = document.createElement("th");
-        headerCell.textContent = headerText;
-        headerRow.appendChild(headerCell);
+    let headerRow = document.createElement("tr")//define row and create new element on document tr
+    for (let headerText of headersArr) {//for to use every header
+        let headerCell = document.createElement("th")//define cell and create new element on document th
+
+        headerCell.textContent = headerText//assign title to cell
+        headerRow.appendChild(headerCell)//assign appendChild
     }
-    table.appendChild(headerRow);
+    table.appendChild(headerRow)//assign appendChild
 
-    let rootElement = document.getElementById("root");
-    let searchButton = document.getElementById("findItem");
-    rootElement.insertBefore(table, searchButton.nextSibling);
+    let rootElement = document.getElementById("root")//define father
+    let searchButton = document.getElementById("findItem")//define child
+
+    rootElement.insertBefore(table, searchButton.nextSibling)//assign position
 }
 
-insertTablaHeaders();
+insertTablaHeaders()//calling function to print out the header table
 
 
 //====================Search Button==============================
 
-let k=0
-findItem.addEventListener("click", function(){
-    // e.preventDefault()
-    // reaload the page like f5
-    // findItem.addEventListener('click', _ => {
-    //         location.reload();
-    //     })
-    // let element = document.getElementById("mealTable");
-    // element.remove(); 
-    document.getElementById("mealTable").remove();//remove table
-    insertTablaHeaders();
+findItem.addEventListener("click", function () {//addEventListener for Search button
+    
+    document.getElementById("mealTable").remove()//remove table this is to clean the table if we are doing a second search in a row
+    insertTablaHeaders()// print out the new header for the new search
 
-    if (document.getElementById("recipe") !== null) {
-        document.getElementById("recipe").remove()
+    if (document.getElementById("recipe") !== null) {//if the element recipe is on the document 
+        document.getElementById("recipe").remove()//remove it
     }
     else {
-        console.log("The element does not exist");
-        if (document.getElementById("moreInfo") !== null) {
-            document.getElementById("moreInfo").remove()
-        }
-        
-    }
-
-
-    // console.log(typeof(document.getElementById("recipe")))
-    // if (k>0){
-    //     console.log(document.getElementById("recipe"))
-    //     document.getElementById("recipe").remove()
-    // }
-    // insertButton()
-    // insertTableHeaders();
-
-    let infoBtn = document.createElement("button")
-    infoBtn.setAttribute("id","moreInfo")
-    infoBtn.innerHTML = "More Info"
-    
-    let main = document.querySelector("body")
-    main.appendChild(infoBtn)
-
-
-    // insertButton()
-
-    let val = document.getElementById("searchItem").value
-    // console.log(val)
-
-    let url = ""
-if(document.getElementById("searchLetter").checked){
-    url = `https://www.themealdb.com/api/json/v1/1/search.php?f=`
-}else if(document.getElementById("searchName").checked){
-    url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`
-}
-console.log(url)
-
-// const url = "https://www.themealdb.com/api/json/v1/1/search.php?f=e"
-// const url = "https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata"
-
-// const url = "https://www.themealdb.com/api/json/v1/1/search.php?f="
-
-
-// make an empty array ot put the data
-let mealArr = []
-
-async function getMeals() {
-    let response = await fetch(url+val)
-    let data = await response.json()
-
-    mealArr = data
-    // let x = data.length
-
-    // console.log(mealArr)
-    // console.log(mealArr.length)
-    // console.log(Object.keys(mealArr.meals).length)
-
-
-    for (let i = 0; i < Object.keys(mealArr.meals).length; i++) {
-        let row = mealTable.insertRow()
-        let cell1 = row.insertCell(0)
-        let cell2 = row.insertCell(1)
-        let cell3 = row.insertCell(2)
-        let cell4 = row.insertCell(3)
-
-        cell1.innerHTML = mealArr.meals[i].strMeal
-        cell2.innerHTML = mealArr.meals[i].strCategory
-        cell3.innerHTML = mealArr.meals[i].strArea
-        cell4.innerHTML = `<input type="checkbox" id="${i}"/>`
-    }
-}
-
-getMeals()
-
-document.getElementById("moreInfo").onclick = function() {
-    document.getElementById("moreInfo").remove();//remove mor info button
-}
-
-moreInfo.addEventListener("click", function(){
-    // let cbs = document.querySelectorAll('table [type="checkbox"]:checked')
-    let cbs = document.querySelectorAll(`[type="checkbox"]:checked`)
-    console.log(cbs)
-    let div = document.createElement('div')
-    div.setAttribute("class","card")
-    div.setAttribute("id","recipe")
-    for(let boxes of cbs){
-        let index = Number(boxes.id)
-        if (boxes.checked){
-            console.log(boxes)
-            
-            // let div = document.createElement('div')
-            // div.setAttribute("class","card")
-            // div.setAttribute("id","recipe")
-            let name = document.createElement('h1')
-            name.innerHTML=mealArr.meals[index].strMeal
-            let instructions = document.createElement('p')
-            instructions.innerHTML= mealArr.meals[index].strInstructions
-
-            div.appendChild(name)
-            div.appendChild(instructions)
-            main.appendChild(div)
-            
+        if (document.getElementById("moreInfo") !== null){//if the element moreInfo (button More Info) is on the document
+            document.getElementById("moreInfo").remove()//Remove it
         }
     }
 
+    let infoBtn = document.createElement("button")//define button and create new element on document
+
+    infoBtn.setAttribute("id", "moreInfo")//setup attribute id
+    infoBtn.innerHTML = "More Info"//assign button name
+
+    let main = document.querySelector("body")//define main and create new element on document
+    main.appendChild(infoBtn)//assign child
+
+    let val = document.getElementById("searchItem").value//get the user input
+
+    let url = ""//define empty variable
+    if (document.getElementById("searchLetter").checked) {//if searchLetter is checked
+        url = `https://www.themealdb.com/api/json/v1/1/search.php?f=`//use this url
+    } else if (document.getElementById("searchName").checked) {//if searchName is checked
+        url = `https://www.themealdb.com/api/json/v1/1/search.php?s=`//use this url
+    }
+
+    let mealArr = []// make an empty array ot put the data form API 
+
+//====================Print out table==============================
+
+    async function getMeals() {//new function to print the selected data from mealArr
+        let response = await fetch(url + val)//use the API
+        let data = await response.json()//assign the response API to data
+
+        mealArr = data//assign data to the empty array
+
+        for (let i = 0; i < Object.keys(mealArr.meals).length; i++){//for loop to print data
+            let row = mealTable.insertRow()//1st row
+            let cell1 = row.insertCell(0)//cell1 Meal Name
+            let cell2 = row.insertCell(1)//cell2 Meal Type
+            let cell3 = row.insertCell(2)//cell3 Meal Origin
+            let cell4 = row.insertCell(3)//cell4 Select
+
+            cell1.innerHTML = mealArr.meals[i].strMeal//assign value strMeal
+            cell2.innerHTML = mealArr.meals[i].strCategory//assign value strCategory
+            cell3.innerHTML = mealArr.meals[i].strArea//assign value strArea
+            cell4.innerHTML = `<input type="checkbox" id="${i}"/>`//assign value checkbox
+        }
+    }
+
+    getMeals()//call the function to print the table
+
+    document.getElementById("moreInfo").onclick = function () {//function for More Info button
+        document.getElementById("moreInfo").remove()//remove mor info button
+    }
+
+//====================More Info Button==============================
+
+    moreInfo.addEventListener("click", function () {//addEventListener for More Info button
+
+        let cbs = document.querySelectorAll(`[type="checkbox"]:checked`)//get checkboxes checked
+        let div = document.createElement('div')//define div and create new element on document
+
+        div.setAttribute("class", "card")//setup attribute class
+        div.setAttribute("id", "recipe")// setup attribute id
+
+        for (let boxes of cbs) {//for to use every checkbox from cbs
+            let index = Number(boxes.id)//assign number checkbox to index
+            if (boxes.checked) {//
+
+                let name = document.createElement('h1')//define name and create new element on document h1 recipe name
+                name.innerHTML = mealArr.meals[index].strMeal//print out recipe name
+
+                let instructions = document.createElement('p')//define instruction and create new element on document p recipe
+                instructions.innerHTML = mealArr.meals[index].strInstructions//print out recipe or instructions
+
+                div.appendChild(name)//assign child from div
+                div.appendChild(instructions)//assign child from div
+                main.appendChild(div)//assign child from main
+
+            }
+        }
+
+    })
+    searchItem.value= ``//clean input searchItem
 })
-k++
-})
-// console.log(mealArr)
-
-// function insertButton(){
-
-// let infoBtn = document.createElement("button")
-// infoBtn.setAttribute("id","moreInfo")
-// infoBtn.innerHTML = "More Info"
-
-// let main = document.querySelector("body")
-// main.appendChild(infoBtn)
-// }
-// insertButton()
-
-// moreInfo.addEventListener("click", function(){
-//     let cbs = document.querySelectorAll("input")
-//     for(let boxes of cbs){
-//         let index = Number(boxes.id)
-//         if (boxes.checked){
-//             console.log(boxes)
-            
-//             let div = document.createElement('div')
-//             div.setAttribute("class","descriptionContainer")
-//             let text = document.createElement('p')
-//             text.innerHTML= mealArr[index].strInstructions
-
-//             div.appendChild(text)
-//             main.appendChild(div)
-//         }
-//     }
-
-// })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const url = "https://api.tvmaze.com/shows/1603/episodes"
-
-// //make an empty array ot put the data
-// let episodesArr = []
-
-
-// //get the data by calling the data
-// async function getSamuraiEps(){
-
-//     //this line fetches the data
-//     let response = await fetch(url)
-//     //this line give us 
-//     let data = await response.json()
-    
-//     episodesArr = data
-    
-//     //console.log(data)
-
-// //format the data
-//     for(let i=0 ; i<26; i++){
-//         let row = mealTable.insertRow()
-//         let cell1=row.insertCell(0)
-//         let cell2=row.insertCell(1)
-//         let cell3=row.insertCell(2)
-//         let cell4=row.insertCell(3)
-    
-//         cell1.innerHTML = episodesArr[i].name
-//         cell2.innerHTML = episodesArr[i].airdate
-//         cell3.innerHTML = episodesArr[i].rating.average
-//         cell4.innerHTML = `<input type="checkbox" id="${i}"/>`
-//     }
-// }
-
-// getSamuraiEps()
-
-
-
-
-
-
-
-
