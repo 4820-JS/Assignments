@@ -50,9 +50,9 @@ async function getMovies() {
                                 <option value="4">4PM</option>
                                 </select>`
         }
-        cell5.innerHTML = `<p>$15.98 each</p><input type="texbox" id="${i}"/>`
+        cell5.innerHTML = `<td>$15.98 each</td><input type="texbox" id="${i}"/>`
         if(movieData[i].genre_ids.includes(10751)===true){
-            cell6.innerHTML = `<p>$8.98 each</p><input type="number" min="0" id="${i}"/>`
+            cell6.innerHTML = `<td>$8.98 each</td><input type="number" min="0" id="${i}"/>`
         }else {
             cell6.innerHTML = `<input type="texbox" id="${i}"disabled/>`
         }
