@@ -103,11 +103,11 @@ button.addEventListener("click", function () {//addEventListener for SUBMIT ORDE
             divd.appendChild(instructions)//assign child from divd
             main.appendChild(div)//assign child from main
 
-            // allh1.setAttribute("style","margin: 0")
-            // console.log(allh1)
+//==================With these two lines, we can remove the white line above the first header card============
+//==================I was trying to achieve the same effect as 'margin: 0;' on line 55 in style.css===========
+            // var h1 = document.getElementById("h1")
+            // h1.setAttribute("style","margin: 0")
 
-            var h1 = document.getElementById("h1")
-            h1.setAttribute("style","margin: 0")
         }
     }
 })
