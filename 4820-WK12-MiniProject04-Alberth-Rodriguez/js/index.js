@@ -1,130 +1,69 @@
-// console.log("asd")
+//==============================Define main varibles=================================================
 
-const apiKey = "9ecb4928913e29d67f1fbbb7b3b11227"
+const apiKey = "9ecb4928913e29d67f1fbbb7b3b11227"//define api key
+const baseURL = "https://api.themoviedb.org"// define base URL
+const tendingEndpoints = "/3/trending/movie/day"//define endpont
+const keyTrend = "?api_key="//define key trend
 
-const baseURL = "https://api.themoviedb.org"
+url = baseURL + tendingEndpoints + keyTrend + apiKey//define full URL
 
-const tendingEndpoints = "/3/trending/movie/day"
+//===============Get object and print out all the data on a table=====================================
 
-const keyTrend = "?api_key="
+async function getMovies() {//defines an asynchronous function "getMovies"
+    let res = await fetch(url)//waitting for the response
+    let data = await res.json()//assign json answer to data variable
 
+    movieData = data.results//assign data arr to moviedata variable
 
-// movies.addEventListener("change", function(){
+    for (let i = 0; i < movieData.length; i++) {//for loop through the "movieData" array
 
-url = baseURL + tendingEndpoints + keyTrend + apiKey
+        let row = movieTableBody.insertRow(-1)//inserts a new row at the end of the movieTableBody
 
+        let cell1 = row.insertCell(0)//Inserts cell 1
+        let cell2 = row.insertCell(1)//Inserts cell 2
+        let cell3 = row.insertCell(2)//Inserts cell 3
+        let cell4 = row.insertCell(3)//Inserts cell 4
+        let cell5 = row.insertCell(4)//Inserts cell 5
+        let cell6 = row.insertCell(5)//Inserts cell 6
 
-async function getMovies() {
-    let res = await fetch(url)
-    let data = await res.json()
-
-    movieData = data.results
-
-    // console.log(movieData)
-    for (let i = 0; i < movieData.length; i++) {
-
-        let row = movieTableBody.insertRow(-1)
-
-        let cell1 = row.insertCell(0)
-        let cell2 = row.insertCell(1)
-        let cell3 = row.insertCell(2)
-        let cell4 = row.insertCell(3)
-        let cell5 = row.insertCell(4)
-        let cell6 = row.insertCell(5)
-
-        cell1.innerHTML = `<input type="checkbox" id="${i}"/>`
-        // cell2.innerHTML = `<img src="https://image.tmdb.org/t/p/w300/hnzXoDaK346U4ByfvQenu2DZnTg.jpg"/>`
-        cell2.innerHTML = `<img src="https://image.tmdb.org/t/p/w300${movieData[i].poster_path}"/>`
-        // cell2.innerHTML = movieData[i].poster_path
-        cell3.innerHTML = movieData[i].original_title
-        // cell4.innerHTML = movieData[i].vote_average
-        if (movieData[i].vote_average > 6) {
+        cell1.innerHTML = `<input type="checkbox" id="${i}"/>`// assign value (checkbox) to cell1
+        cell2.innerHTML = `<img src="https://image.tmdb.org/t/p/w300${movieData[i].poster_path}"/>`// assign value (poster) to cell2
+        cell3.innerHTML = movieData[i].original_title// assign value (title) to cell3
+        if (movieData[i].vote_average > 6) {//if vote average > 6 do 
             cell4.innerHTML = `<select time="time" id="${i}time">
                                 <option value="11AM">11AM</option>
                                 <option value="3PM">3PM</option>
                                 <option value="9PM">9PM</option>
-                                </select>`
-        } else if (movieData[i].vote_average < 6) {
+                                </select>`// assign value (time) to cell4
+        } else if (movieData[i].vote_average < 6) {//if vote average < 6 do 
             cell4.innerHTML = `<select time="time" id="${i}time">
                                 <option value="1PM">1PM</option>
                                 <option value="4PM">4PM</option>
-                                </select>`
+                                </select>`// assign value (time) to cell4
         }
-        cell5.innerHTML = `<td>$15.98 each</td><input type="number" min="0" value="0" id="${i}adult"/>`
-        if (movieData[i].genre_ids.includes(10751) === true) {
-            cell6.innerHTML = `<td>$8.98 each</td><input type="number" min="0" value="0" id="${i}child"/>`
+        cell5.innerHTML = `<td>$15.98 each</td><input type="number" min="0" value="0" id="${i}adult"/>`// assign value (adult price and box) to cell5
+        if (movieData[i].genre_ids.includes(10751) === true) {//if family do
+            cell6.innerHTML = `<td>$8.98 each</td><input type="number" min="0" value="0" id="${i}child"/>`// assign value (child price and box) to cell6
         } else {
-            cell6.innerHTML = `<input type="texbox" value="0" id="${i}child"disabled/>`
+            cell6.innerHTML = `<input type="texbox" value="0" id="${i}child"disabled/>`// assign value (box disable) to cell6
         }
-
     }
 }
-getMovies()
+getMovies()//calling the function
 
-let submitButton = document.createElement("button")
-submitButton.setAttribute("id", "button")
-submitButton.innerHTML = "SUBMIT ORDER"
+//=============================Create button==========================================================
 
-let main = document.getElementById("movieContainer")
-main.appendChild(submitButton)
+let submitButton = document.createElement("button")//create button 
+submitButton.setAttribute("id", "button") // set id attribute
+submitButton.innerHTML = "SUBMIT ORDER"// set name
 
-// button.addEventListener("click", function(){
-//     console.log("asd")
-//     let card = document.createElement("header")
-//     card.setAttribute("id","movieContainer")
-//     card.setAttribute("class","card")
+let main = document.getElementById("movieContainer")//define main 
+main.appendChild(submitButton)//assign child to main
 
-//     card.innerHTML = "<h1>asdfas</h1><h2>aegudoo</h2>"
+//=============================addEventListener for new button=========================================
 
+button.addEventListener("click", function () {//addEventListener for SUBMIT ORDER button
 
-// let maine = document.querySelector("body")
-// maine.appendChild(card)
-
-//     }
-// )
-
-// button.addEventListener("click", function () {//addEventListener for More Info button
-
-//     let cbs = document.querySelectorAll(`[type="checkbox"]:checked`)//get checkboxes checked
-//     // let div = document.createElement('div')//define div and create new element on document
-
-//     console.log(cbs)
-
-//     for (let boxes of cbs) {
-//         let index = Number(boxes.id)
-
-//         if (boxes.checked) {
-//             let div1 = document.createElement("div")
-//             div1.setAttribute("class", "container")
-//             div1.setAttribute("id", "container")
-//             let mani = document.querySelector("body")
-//             mani.appendChild(div1)
-
-
-//             let div2 = document.createElement("div")
-//             div2.setAttribute("class", "card")
-//             div2.setAttribute("id", "card")
-//             let mani2 = document.getElementById("container")
-//             mani2.appendChild(div2)
-
-//             div2.innerHTML = ("<header><h1>sfg</h1></header>")
-            
-//             let div3 = document.createElement("p")
-//             // div3.setAttribute("class", "card")
-//             // div3.setAttribute("id", "cardr")
-//             let mani3= document.getElementById("card")
-//             mani3.appendChild(div3)
-
-//             div3.innerHTML = (index)
-//         }
-//     }
-// })
-
-
-
-button.addEventListener("click", function () {//addEventListener for More Info button
-
-    // let ddms = document.querySelectorAll(`[type="checkbox"]:checked`)//get checkboxes checked 
     let cbs = document.querySelectorAll(`[type="checkbox"]:checked`)//get checkboxes checked
     let div = document.createElement('div')//define div and create new element on document
 
@@ -133,48 +72,43 @@ button.addEventListener("click", function () {//addEventListener for More Info b
 
     for (let boxes of cbs) {//for to use every checkbox from cbs
         let index = Number(boxes.id)//assign number checkbox to index
-        if (boxes.checked) {//
-            let divd = document.createElement('div')
-            divd.setAttribute("class", "card")
+        if (boxes.checked) {//if checkbox is checked
+            let divd = document.createElement('div')//define divv and create new element on document
+            divd.setAttribute("class", "card")//setup attribute class
 
-            let name = document.createElement('header')//define name and create new element on document h1 recipe name
-            name.innerHTML = ("<h1>SUCCESSFUL BOOKING</h1>")//print out recipe name
+            let name = document.createElement('header')//define name and create new element header on document 
+            name.innerHTML = (`<h1 id="h1">SUCCESSFUL BOOKING</h1>`)//print out header
 
-            let item1 = ""
-            item1 = index+"time"
-            let val = document.getElementById(item1).value
-            console.log(val)
+            let item1 = ""//define item1 for time
+            item1 = index+"time"//create id
+            let val = document.getElementById(item1).value//get value for id item1
 
-            let item2 = ""
-            item2 = index+"adult"
-            let val2 = document.getElementById(item2).value
-            console.log(val2)
+            let item2 = ""//define item1 for q adults
+            item2 = index+"adult"//create id
+            let val2 = document.getElementById(item2).value//get value for id item2
 
-            let item3 = ""
-            item3 = index+"child"
-            let val3 = document.getElementById(item3).value
-            console.log(val3)
+            let item3 = ""//define item1 for children
+            item3 = index+"child"//create id
+            let val3 = document.getElementById(item3).value//get value for id item3
 
-            // let instructions = document.createElement('p')//define instruction and create new element on document p recipe
-            // instructions.innerHTML = (  "Your movie showing of "+movieData[index].original_title+" is at "+val+"<br>"+
-            //                             "You purchased "+val2+" adult tickets"+"<br>"+
-            //                             "and "+val3+" child tickets"+"<br>"+
-            //                             "Your total is $"+(val2*15.98+val3*8.98)+"<br>"+
-            //                             "Enjoy The Show!"+"<br>")
-
-            let instructions = document.createElement('p')//define instruction and create new element on document p recipe
+            let instructions = document.createElement('p')//define instruction and create new element p on document
             instructions.innerHTML = (  "<p>"+"Your movie showing of "+movieData[index].original_title+" is at "+val+"</p>"+"<br>"+
                                         "<p>"+"You purchased "+val2+" adult tickets"+"</p>"+"<br>"+
                                         "<p>"+"and "+val3+" child tickets"+"</p>"+"<br>"+
                                         "<h2>"+"Your total is $"+(val2*15.98+val3*8.98)+"</h2>"+"<br>"+
-                                        "<h2>"+"Enjoy The Show!"+"</h2>"+"<br>")
+                                        "<h2>"+"Enjoy The Show!"+"</h2>"+"<br>")//print out full content
                                         
-            div.appendChild(divd)
-            divd.appendChild(name)//assign child from div
-            divd.appendChild(instructions)//assign child from div
+            div.appendChild(divd)//assign child from div
+            divd.appendChild(name)//assign child from divd
+            divd.appendChild(instructions)//assign child from divd
             main.appendChild(div)//assign child from main
 
+            // allh1.setAttribute("style","margin: 0")
+            // console.log(allh1)
+
+            var h1 = document.getElementById("h1")
+            h1.setAttribute("style","margin: 0")
         }
     }
-
 })
+
