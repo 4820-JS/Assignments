@@ -14,15 +14,16 @@
 // You are NOT allowed to use concepts that we have not covered in class. If you need clarification,
 // please message me. 
 
+//=======================================================================
+
+//I tried to create a functional website so that you can make as many searches as you want without refreshing (f5) the page.
+
 //====================Insert Table Headers==============================
 
 function insertTablaHeaders() {//function to create table header
 
     let headersArr = ["Meal Name", "Meal Type", "Meal Origin", "Select"]//new array to save 4 headers table
     let table = document.createElement("table")//define table and create new element on document
-
-    // let divt = document.createElement("div")
-    // divt.setAttribute("class","container")
 
     table.setAttribute("id", "mealTable")// setup attribute id
     table.setAttribute("class", "card") // setup attribute class
@@ -129,11 +130,9 @@ findItem.addEventListener("click", function () {//addEventListener for Search bu
                 divd.setAttribute("class", "card")
 
                 let name = document.createElement('h1')//define name and create new element on document h1 recipe name
-                // name.setAttribute("class", "card")
                 name.innerHTML = mealArr.meals[index].strMeal//print out recipe name
 
                 let instructions = document.createElement('p')//define instruction and create new element on document p recipe
-                // instructions.setAttribute("class", "card")
                 instructions.innerHTML = mealArr.meals[index].strInstructions//print out recipe or instructions
 
                 div.appendChild(divd)
