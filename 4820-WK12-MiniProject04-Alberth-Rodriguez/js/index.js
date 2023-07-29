@@ -77,7 +77,7 @@ button.addEventListener("click", function () {//addEventListener for SUBMIT ORDE
             divd.setAttribute("class", "card")//setup attribute class
 
             let name = document.createElement('header')//define name and create new element header on document 
-            name.innerHTML = (`<h1 id="h1">SUCCESSFUL BOOKING</h1>`)//print out header
+            name.innerHTML = (`<h1 id="h1" style="margin:0">SUCCESSFUL BOOKING</h1>`)//print out header with margin:0 to avoid white line 
 
             let item1 = ""//define item1 for time
             item1 = index+"time"//create id
